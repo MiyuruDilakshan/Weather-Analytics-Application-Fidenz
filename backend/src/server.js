@@ -1,9 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import weatherRoutes from './routes/index.js';
-
 dotenv.config();
+import weatherRoutes from './routes/index.js';
 
 const app = express();
 

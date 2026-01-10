@@ -3,7 +3,11 @@ import axios from 'axios';
 class WeatherService {
   constructor() {
     this.baseURL = 'https://api.openweathermap.org/data/2.5/weather';
-    this.apiKey = process.env.WEATHER_API_KEY;
+  }
+
+  // Get API key when needed (not in constructor)
+  getApiKey() {
+    return process.env.WEATHER_API_KEY;
   }
 
   async getWeather(cityId) {
@@ -11,7 +15,7 @@ class WeatherService {
       const response = await axios.get(this.baseURL, {
         params: {
           id: cityId,
-          appid: this.apiKey,
+          appid: this.getApiKey(),
           units: 'metric',
         },
       });
@@ -29,7 +33,7 @@ class WeatherService {
         params: {
           lat,
           lon,
-          appid: this.apiKey,
+          appid: this.getApiKey(),
           units: 'metric',
         },
       });
