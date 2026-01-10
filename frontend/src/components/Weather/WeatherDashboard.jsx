@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import WeatherCard from './WeatherCard';
+import TemperatureGraph from './TemperatureGraph';
 import Loading from '../Layout/Loading';
 
 const WeatherDashboard = () => {
@@ -172,6 +173,13 @@ const WeatherDashboard = () => {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Temperature Graph */}
+      {sortedData.length > 0 && (
+        <div className="mb-8">
+          <TemperatureGraph cities={sortedData} />
         </div>
       )}
 

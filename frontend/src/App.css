@@ -1,7 +1,13 @@
-/* Global styles */
+/* App wrapper */
 .App {
   min-height: 100vh;
   background-color: #f9fafb;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode for App */
+.dark .App {
+  background-color: #111827;
 }
 
 .container {
@@ -10,10 +16,8 @@
   padding: 0 1rem;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .App {
-    background-color: #111827;
-  }
+/* Smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
